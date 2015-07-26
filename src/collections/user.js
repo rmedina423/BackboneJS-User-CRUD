@@ -6,7 +6,7 @@ var Backbone = require('backbone');
 *****************************************/
 
 var App = require('../app');
-var User = require('../models/User');
+var User = require('../models/user');
 
 /****************************************
   Collection: User
