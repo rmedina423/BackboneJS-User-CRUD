@@ -1,21 +1,21 @@
 {
   "name": "bb",
   "version": "1.0.0",
-  "description": "",
+  "description": "This project will get you familiar with CRUD and MVC. CRUD stands for Create, Retrieve, Update, and Delete. Every \"entity\" in an information system is usually subject to these four processes. This project already has a full user CRUD built in. In other words, all the code for creating, retrieving, updating, and deleting users is already done. This will allow you to learn by example -one of the best ways to learn new frameworks.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Matt Lewandowski",
+  "license": "MIT",
   "devDependencies": {
-    "browserify": "^10.2.3",
+    "browserify": "^10.2.6",
     "browserify-shim": "^3.8.10",
     "gulp": "^3.9.0",
     "gulp-serve": "^1.0.0",
-    "gulp-util": "^3.0.5",
+    "gulp-util": "^3.0.6",
     "hbsfy": "^2.2.1",
-    "json-server": "^0.7.12",
+    "json-server": "^0.7.23",
     "rimraf": "^2.4.2",
     "vinyl-source-stream": "^1.1.0"
   },
@@ -23,7 +23,7 @@
     "backbone": "^1.2.1",
     "handlebars": "^3.0.3",
     "jquery": "^2.1.4",
-    "lodash": "^3.9.3"
+    "lodash": "^3.10.0"
   },
   "browser": {
     "bootstrap": "./node_modules/bootstrap/dist/js/bootstrap.js",
@@ -53,5 +53,13 @@
       "exports": "_"
     }
   },
-  "private": true
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mtlewandowsk89/BackboneJS-User-CRUD.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mtlewandowsk89/BackboneJS-User-CRUD/issues"
+  },
+  "homepage": "https://github.com/mtlewandowsk89/BackboneJS-User-CRUD#readme"
 }
