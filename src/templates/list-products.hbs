@@ -1,0 +1,27 @@
+<table border="1">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Type</th>
+      <th>Size</th>
+      <th>Color</th>
+      <th>Edit | Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+
+  {{#each this}}
+  <tr data-id="{{id}}">
+    <td><img src="{{img}}" alt="" width=100 height=100></td>
+    <td>{{type}}</td>
+    <td>{{size}}</td>
+    <td>{{color}}</td>
+    <td>
+      <a href="/#/product/{{id}}/edit">Edit</a> |
+      <a href="/#/product/{{id}}/delete">Delete</a>
+    </td>
+  </tr>
+  {{/each}}
+
+  </tbody>
+</table>
