@@ -12,6 +12,10 @@ App.Views.UserForm = new UserFormView;
 var ListUsersView = require('./views/list-users');
 App.Views.ListUsers  = new ListUsersView;
 
+// View: List Products
+var ListProductsView = require('./views/list-users');
+App.Views.ListProducts = new ListProductsView;
+
 // App Router
 App.Router = Backbone.Router.extend({
 
@@ -21,6 +25,7 @@ App.Router = Backbone.Router.extend({
     'user/add(/)': 'addUser',
     'user/:id/edit(/)': 'addUser',
     'user/:id/delete(/)': 'deleteUser',
+    'products(/)': 'listProducts',
     '*actions': 'defaultRoute'
   },
 
@@ -40,6 +45,10 @@ App.Router = Backbone.Router.extend({
     user.destroy().done(function (user) {
       App.router.navigate('/', { trigger: true })
     });
+  },
+
+  listProducts: function() {
+    App.Views.ListProducts.render(id);
   },
 
   defaultRoute: function(actions) {
