@@ -74,7 +74,7 @@ header {
 }
 
 .panel.hero > div {
-	height: 340px;
+	height: 300px;
 }
 
 .panel.hero header:nth-child(1) {
@@ -125,17 +125,11 @@ header {
   Components
 ****************************************/
 
-.container > * + * {
-	margin: 10px;
-}
-
 .container {
 	background-color: rgba(241, 241, 241, 1);
 	min-height: 140px;
-	width: 350px;
-	border-radius: 5px;
-	/*padding: 5px;*/
-	/*overflow: hidden;*/
+	width: 500px;
+	padding: 10px;
 }
 
 .mediaImg {
@@ -144,16 +138,16 @@ header {
 }
 
 .mediaImg > img {
-	width: 130px;
-	height: 140px;
+	width: 150px;
+	height: 165px;
 	display: block;
 }
 
 .mediaContent {
-	/*margin-left: 130px;*/
-	height: 140px;
-	padding-left: 5px;
+	padding: 5px;
+	height: 165px;
 	background-color: #FFF;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
 	overflow: hidden;
-	/*background-color: green;*/
 }
