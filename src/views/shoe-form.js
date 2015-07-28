@@ -40,7 +40,7 @@ var ProductFormView = Backbone.View.extend({
 
 				form.find($('select[name="type"]')).val(shoe.type)
 				form.find($('select[name="size"]')).val(shoe.size)
-				form.find($('select:[name="color]')).val(shoe.color)
+				form.find($('select[name="color"]')).val(shoe.color)
 
 			})
 		}
@@ -54,9 +54,9 @@ var ProductFormView = Backbone.View.extend({
 		event.preventDefault()
 		// Collect Form Data
 		var formData = {
-			type: $('form.product select[name=type]').val(),
-			size: $('form.product select[name=size]').val(),
-			color: $('form.product select[name=color]').val()
+			type: $('form.product select[name="type"]').val(),
+			size: $('form.product select[name="size"]').val(),
+			color: $('form.product select[name="color"]').val()
 		};
 
 		// Add Mode (Create User)

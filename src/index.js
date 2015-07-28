@@ -3,9 +3,9 @@ var Backbone = require('backbone');
 // App
 var App = require('./app');
 var userCollection = require('./collections/user');
-var shoeCollection = require('./collections/shoe')
+var shoeCollection = require('./collections/shoe');
 
-// View: User Form
+// View: Form
 var UserFormView = require('./views/user-form');
 var ProductFormView = require('./views/shoe-form')
 App.Views.UserForm = new UserFormView;
@@ -32,6 +32,7 @@ App.Router = Backbone.Router.extend({
     'shoes(/)': 'listProducts',
     'shoes/add(/)': 'addShoe',
     'shoes/:id/edit(/)': 'addShoe',
+    'shoes/:id/delete(/)': 'deleteProduct',
     '*actions': 'defaultRoute'
   },
 
@@ -45,10 +46,6 @@ App.Router = Backbone.Router.extend({
     App.Views.UserForm.render(id);
   },
 
-  addShoe: function(id) {
-    App.Views.ProductFormView.render(id);
-  },
-
   deleteUser: function(id) {
     var user = userCollection.get(id);
 
@@ -59,6 +56,19 @@ App.Router = Backbone.Router.extend({
 
   listProducts: function() {
     App.Views.ListProducts.render()
+  },
+
+  addShoe: function(id) {
+    App.Views.ProductFormView.render(id);
+  },
+
+  deleteProduct: function(id) {
+    var product = shoeCollection.get(id);
+    console.log(product)
+
+    product.destroy().done(function (product) {
+      App.router.navigate('/', { trigger: true })
+    })
   },
 
   defaultRoute: function(actions) {
