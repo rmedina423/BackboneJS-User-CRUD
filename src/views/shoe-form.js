@@ -27,6 +27,7 @@ var ProductFormView = Backbone.View.extend({
 			var output = formTemplate();
 			this.$el.html(output)
 
+
 		// Display form in Update Mode
 		} else {
 			var product = this.product = new Product({id: ShoeId});
@@ -62,6 +63,26 @@ var ProductFormView = Backbone.View.extend({
 		if(!this.editMode) {
 
 			// Only set the image on add mode
+			switch (formData.type) {
+				case "skate":
+					formData.img = '/images/SkateShoes.jpg';
+					break;
+				case "dress":
+					formData.img = '/images/Dress.jpg';
+					break;
+				case "casual":
+					formData.img = '/images/Casual.jpg';
+					break;
+				case "sandal":
+					formData.img = '/images/Sandals.jpg';
+					break;
+				case "basketball":
+					formData.img = '/images/Basketball-Shoes.jpg';
+					break;
+				default:
+					console.log('Sorry, we do not have that product')
+			}
+
 			App.Collections.shoe.create(formData, {
 				success: function (shoe) {
 					App.router.navigate('/', { trigger: true });
