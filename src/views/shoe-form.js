@@ -31,9 +31,16 @@ var ProductFormView = Backbone.View.extend({
 		} else {
 			var product = this.product = new Product({id: ShoeId});
 
-			product.fetch().done(function () {
+			product.fetch().done(function (shoe) {
 				var output = formTemplate(product.toJSON());
 				_this.$el.html(output);
+
+				var form = _this.$el.find($('form.product'))
+
+				form.find($('select[name="type"]')).val(shoe.type)
+				form.find($('select[name="size"]')).val(shoe.size)
+				form.find($('select:[name="color]')).val(shoe.color)
+
 			})
 		}
 	},
