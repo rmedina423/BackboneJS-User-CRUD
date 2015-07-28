@@ -68,17 +68,17 @@ header {
 }
 
 .panel.hero {
-	background:url(/images/download.jpg);
+	background:url(/images/shoe.jpg);
 	background-size: cover;
 	position: relative;
 }
 
 .panel.hero > div {
-	height: 250px;
+	height: 340px;
 }
 
 .panel.hero header:nth-child(1) {
-	background-color: rgba(39, 49, 51, 1);
+	background-color: rgba(6, 4, 6, 1);
 }
 
 .homepage-link {
@@ -118,7 +118,7 @@ header {
 .panel.primary-content {
 	/*background-color: #D7E1E7;*/
 	background-color: rgba(241, 241, 241, 1);
-	min-height: 715px;
+	min-height: 875px;
 }
 
 /****************************************
@@ -126,14 +126,15 @@ header {
 ****************************************/
 
 .container > * + * {
-	margin: 5px;
+	margin: 10px;
 }
 
 .container {
 	background-color: rgba(241, 241, 241, 1);
-	height: 131px;
+	min-height: 140px;
 	width: 350px;
 	border-radius: 5px;
+	/*padding: 5px;*/
 	/*overflow: hidden;*/
 }
 
@@ -143,15 +144,16 @@ header {
 }
 
 .mediaImg > img {
-	width: 100px;
-	height: 131px;
+	width: 130px;
+	height: 140px;
 	display: block;
 }
 
 .mediaContent {
-	margin-left: 100px;
-	height: 131px;
+	/*margin-left: 130px;*/
+	height: 140px;
 	padding-left: 5px;
 	background-color: #FFF;
+	overflow: hidden;
 	/*background-color: green;*/
 }
