@@ -14,12 +14,12 @@
     }
   ],
   "shoes": [
-    {
-      "userId": "",
-      "type": "",
-      "size": "",
-      "color": "",
-      "img": ""
+  {
+      "userId": "2",
+      "type": "Casual",
+      "size": "12",
+      "color": "black",
+      "img": "/shoe.png"
     }
   ]
 }

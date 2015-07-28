@@ -13,7 +13,7 @@ var Shoe = require('../models/shoe');
 *****************************************/
 
 var ShoeCollection = Backbone.Collection.extend({
-  url: App.Settings.apiRoot + '/shoe',
+  url: App.Settings.apiRoot + '/shoes',
   model: Shoe
 });
 

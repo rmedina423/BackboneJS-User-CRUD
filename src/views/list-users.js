@@ -10,7 +10,6 @@ var App = require('../app');
 
 var ListUsers = Backbone.View.extend({
   el: $('main'),
-
   collection: App.Collections.user,
 
   render: function () {
