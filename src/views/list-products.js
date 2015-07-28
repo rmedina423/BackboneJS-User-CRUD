@@ -20,7 +20,7 @@ var ListProducts = Backbone.View.extend({
 
 		// Fetch Collection from Server
 		productCollection.fetch().done(function (products) {
-			productCollection.add(products);
+			// productCollection.add(products);
 			_this.$el.html(listProductsTemplate(products))
 		})
 	}
