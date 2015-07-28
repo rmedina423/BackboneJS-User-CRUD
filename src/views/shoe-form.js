@@ -36,6 +36,38 @@ var ProductFormView = Backbone.View.extend({
 				_this.$el.html(output);
 			})
 		}
+	},
+
+	events: {
+		"submit form.product": "submitForm" 
+	},
+
+	submitForm: function (event) {
+		event.preventDefault()
+		// Collect Form Data
+		var formData = {
+			type: $('form.product select[name=type]').val(),
+			size: $('form.product select[name=size]').val(),
+			color: $('form.product select[name=color]').val()
+		};
+
+		// Add Mode (Create User)
+		if(!this.editMode) {
+
+			// Only set the image on add mode
+			App.Collections.shoe.create(formData, {
+				success: function (shoe) {
+					App.router.navigate('/', { trigger: true });
+				}
+			});
+
+		// Edit Mode (Update User)
+		} else {
+			this.product.set(formData);
+			this.product.save().done(function () {
+				App.router.navigate('/', { trigger: true});
+			});
+		}
 	}
 })
 
