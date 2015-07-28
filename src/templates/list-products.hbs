@@ -1,27 +1,16 @@
-<table border="1">
-  <thead>
-    <tr>
-      <th></th>
-      <th>Type</th>
-      <th>Size</th>
-      <th>Color</th>
-      <th>Edit | Delete</th>
-    </tr>
-  </thead>
-  <tbody>
 
-  {{#each this}}
-  <tr data-id="{{id}}">
-    <td><img src="{{img}}" alt="" width=100 height=100></td>
-    <td>{{type}}</td>
-    <td>{{size}}</td>
-    <td>{{color}}</td>
-    <td>
-      <a href="/#/products/{{id}}/edit">Edit</a> |
+{{#each this}}
+<div class="container">
+  <div class="mediaImg">
+    <img src="{{img}}" alt="" width=100 height=100>
+  </div>
+  <div data-id="{{id}}" class="mediaContent">
+    <p>{{type}}</p>
+    <p>{{size}}</p>
+    <p>{{color}}</p>
+    <p><a href="/#/products/{{id}}/edit">Edit</a> |
       <a href="/#/products/{{id}}/delete">Delete</a>
-    </td>
-  </tr>
-  {{/each}}
-
-  </tbody>
-</table>
+    </p>
+  </div>
+</div>
+{{/each}}
