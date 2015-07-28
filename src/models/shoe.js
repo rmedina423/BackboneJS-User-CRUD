@@ -13,7 +13,7 @@ var App = require('../app');
 
 App.Models.Shoe = Backbone.Model.extend({
   url: function() {
-    var base = App.Settings.apiRoot + '/products';
+    var base = App.Settings.apiRoot + '/shoes';
     if (this.isNew()) return base;
     return base + '/' + this.id
   }
