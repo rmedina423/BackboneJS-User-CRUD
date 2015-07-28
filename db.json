@@ -11,6 +11,12 @@
       "name": "Kevin",
       "hobby": "Beard Growing",
       "img": "http://robohash.org/14eb93afa4d.png"
+    },
+    {
+      "name": "Hey there",
+      "hobby": "Gooollll",
+      "img": "http://robohash.org/14ed2c97aa7.png",
+      "id": 3
     }
   ],
   "shoes": [
