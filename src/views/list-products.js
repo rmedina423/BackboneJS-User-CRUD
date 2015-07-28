@@ -16,7 +16,6 @@ var ListProducts = Backbone.View.extend({
 	render: function () {
 		var _this = this;
 		var productCollection = this.collection;
-		console.log(productCollection)
 
 		// Fetch Collection from Server
 		productCollection.fetch().done(function (products) {

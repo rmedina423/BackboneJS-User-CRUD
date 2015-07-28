@@ -31,7 +31,8 @@ var UserFormView = Backbone.View.extend({
     } else {
       var user = this.user = new User({ id: userId });
 
-      user.fetch().done(function () {
+      user.fetch().done(function (data) {
+        console.log(data)
         var output = formTemplate(user.toJSON());
         _this.$el.html(output);
       });
