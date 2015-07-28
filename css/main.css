@@ -1,3 +1,155 @@
 th, td {
   padding: 10px 20px;
 }
+
+
+/****************************************
+  Inherited Syles
+*****************************************/
+
+/*
+See this explanation for details
+https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+*/
+
+ html {
+    box-sizing: border-box;
+    color: #444;
+    font: 12pt 'Open Sans', 'Lobster', Arial;
+    font-weight: 300;
+}
+
+/****************************************
+  Resets
+*****************************************/
+
+*, *::before, *::after {
+    box-sizing: inherit;
+    color: inherit;
+    font: inherit;
+}
+ 
+/****************************************
+  Defaults
+*****************************************/
+body {
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+header {
+	position: relative;
+	height: 60px;
+}
+
+/****************************************
+  Helpers
+*****************************************/
+ .cf::after {
+    content: '';
+    display: block;
+    clear: both;
+} 
+
+/****************************************
+  Layout
+*****************************************/
+
+/**
+* Header 
+**/
+
+.panel {
+	/*width: 960px;*/
+	margin: 0 auto;
+}
+
+.panel.hero {
+	background:url(/images/download.jpg);
+	background-size: cover;
+	position: relative;
+}
+
+.panel.hero > div {
+	height: 250px;
+}
+
+.panel.hero header:nth-child(1) {
+	background-color: rgba(39, 49, 51, 1);
+}
+
+.homepage-link {
+	display: inline-block;
+	margin: 2px;
+	font: 3em 'Lobster' cursive;
+}
+
+ .homepage-link > a {
+	color: white;
+} 
+
+/**
+* Nav
+**/
+
+.primary-nav {
+	border-top: 2px solid rgba(255, 255, 255, 0.2);
+	border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.primary-nav > a {
+	display: inline-block;
+	font-weight: bold;
+	color: black;
+	padding: 15px;
+}
+
+/**
+* Primary Content
+***/
+
+.panel.primary-content > div:nth-child(2) {
+	/*background-color: #FFF;*/
+}
+
+.panel.primary-content {
+	/*background-color: #D7E1E7;*/
+	background-color: rgba(241, 241, 241, 1);
+	min-height: 715px;
+}
+
+/****************************************
+  Components
+****************************************/
+
+.container > * + * {
+	margin: 5px;
+}
+
+.container {
+	background-color: rgba(241, 241, 241, 1);
+	height: 100px;
+	width: 350px;
+	overflow: hidden;
+}
+
+.mediaImg {
+	float: left;
+	background-color: #FFF;
+}
+
+.mediaImg > img {
+	width: 100px;
+	height: 100px;
+}
+
+.mediaContent {
+	margin-left: 100px;
+	/*height: 100px;*/
+	padding-left: 5px;
+	background-color: #FFF;
+	/*background-color: green;*/
+}
