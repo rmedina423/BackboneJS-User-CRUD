@@ -133,7 +133,7 @@ header {
 	background-color: rgba(241, 241, 241, 1);
 	height: 100px;
 	width: 350px;
-	overflow: hidden;
+	/*overflow: hidden;*/
 }
 
 .mediaImg {
