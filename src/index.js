@@ -64,10 +64,9 @@ App.Router = Backbone.Router.extend({
 
   deleteProduct: function(id) {
     var product = shoeCollection.get(id);
-    console.log(product)
 
     product.destroy().done(function (product) {
-      App.router.navigate('/', { trigger: true })
+      App.router.navigate('/shoes', { trigger: true })
     })
   },
 
