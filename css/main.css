@@ -38,8 +38,8 @@ a {
 header {
 	position: relative;
 	height: 60px;
-/*	overflow: hidden;
-*/}
+	overflow: hidden;
+}
 
 /****************************************
   Helpers
@@ -63,14 +63,14 @@ header {
 }
 
 .panel.hero {
-	background: radial-gradient(rgba(135, 78, 148, 0.27), #874E94), url(/images/shoe.jpg);
+	background: radial-gradient(rgba(135, 78, 148, 0.55), #874E94), url(/images/shoe.jpg);
 	background-size: cover;
 	position: relative;
 
 }
 
 .panel.hero > div {
-	height: 375px;
+	height: 300px;
 }
 
 .panel.hero header:nth-child(1) {
@@ -139,10 +139,13 @@ header {
 
 .container {
 	background-color: rgba(241, 241, 241, 1);
+	box-shadow: 0 0 10px -2px #874E94;
 	min-height: 165px;
 	width: calc(46% - 10px);
 	margin: 10px;
 	display: inline-block;
+	overflow: hidden;
+	border-radius: 50px;
 }
 
 .mediaImg {
@@ -150,14 +153,12 @@ header {
 }
 
 .mediaImg > img {
-	width: 150px;
+	min-width: 150px;
 	display: block;
 }
 
 .mediaContent {
 	padding: 10px;
-	border-top-right-radius: 5px;
-	border-bottom-right-radius: 5px;
 	overflow: hidden;
 }
 
@@ -178,6 +179,32 @@ header {
 
 .mediaImg, .mediaContent {
 	background-color: #FFF;
+}
+
+.primary-message {
+	margin-top: 50px;
+	width: 600px;
+}
+
+.author {
+	height:150px;
+	width: 150px;
+	overflow: hidden;
+	border-radius: 75px;
+	margin-left: 40px;
+	background-image: url("https://avatars0.githubusercontent.com/u/12129719?v=3&s=400");
+	background-size: cover;
+	float: left;
+	margin-right: 25px
+}
+
+.author-description {
+	padding-left: 10px;
+	color: rgba(241, 241, 241, 1);
+}
+
+.author-description h1 {
+	font-size: 28px;
 }
 
 .product {
