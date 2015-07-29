@@ -97,16 +97,19 @@ header {
 **/
 
 .primary-nav {
-	position: absolute;
+	/*position: absolute;*/
 	/*margin-top: 10px;*/
-	top: 0;
-	right: 650px;
+	/*top: 0;*/
+	/*right: 650px;*/
+	text-align: right;
 	text-transform: uppercase;
 	color: #FFF;
+	display: inline;
+	width: 300px;
 }
 
 .primary-nav > a {
-	display: inline-block;
+	/*display: inline-block;*/
 	font-weight: bold;
 	/*color: #874E94;*/
 	padding: 20px;
@@ -148,8 +151,9 @@ header {
 
 .container {
 	background-color: rgba(241, 241, 241, 1);
-	min-height: 140px;
-	width: 890px;
+	min-height: 165px;
+	/*width: 890px;*/
+	width: calc(46% - 10px);
 	margin: 10px;
 	display: inline-block;
 }
