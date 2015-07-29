@@ -38,7 +38,8 @@ a {
 header {
 	position: relative;
 	height: 60px;
-}
+/*	overflow: hidden;
+*/}
 
 /****************************************
   Helpers
@@ -94,14 +95,14 @@ header {
 	text-align: center;
 	text-transform: uppercase;
 	color: #FFF;
-	display: inline;
-	width: 300px;
+	float: right;
 }
 
 .primary-nav > a {
 	font-weight: bold;
 	padding: 20px;
 	font-size: 14pt;
+	display: inline-block;
 }
 
 .primary-nav > a:hover {
