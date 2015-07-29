@@ -1,7 +1,6 @@
-th, td {
+/*th, td {
   padding: 10px 20px;
-}
-
+}*/
 
 /****************************************
   Inherited Syles
@@ -15,11 +14,11 @@ https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-pract
  html {
     box-sizing: border-box;
     color: #444;
-    font: 12pt 'Open Sans', 'Lobster', Arial;
+    font: 12pt 'Open Sans', 'Kaushan Script', Arial;
     font-weight: 300;
 }
-
-/****************************************
+/*font-family: 'Kaushan Script', cursive;
+*//****************************************
   Resets
 *****************************************/
 
@@ -68,23 +67,25 @@ header {
 }
 
 .panel.hero {
-	background:url(/images/shoe.jpg);
+	/*background:url(/images/shoe.jpg);*/
+	background: radial-gradient(rgba(135, 78, 148, 0.27), #874E94), url(/images/shoe.jpg);
 	background-size: cover;
 	position: relative;
+
 }
 
 .panel.hero > div {
-	height: 300px;
+	height: 375px;
 }
 
 .panel.hero header:nth-child(1) {
-	background-color: rgba(6, 4, 6, 1);
+	background-color: #4B204B;
 }
 
 .homepage-link {
 	display: inline-block;
 	margin: 2px;
-	font: 3em 'Lobster' cursive;
+	font: 3em 'Lobster', cursive;
 }
 
  .homepage-link > a {
@@ -96,29 +97,49 @@ header {
 **/
 
 .primary-nav {
-	border-top: 2px solid rgba(255, 255, 255, 0.2);
-	border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+	position: absolute;
+	/*margin-top: 10px;*/
+	top: 0;
+	right: 650px;
+	text-transform: uppercase;
+	color: #FFF;
 }
 
 .primary-nav > a {
 	display: inline-block;
 	font-weight: bold;
-	color: black;
+	/*color: #874E94;*/
+	padding: 20px;
+	font-size: 14pt;
+}
+
+.primary-nav > a:hover {
+	background-color: rgba(135, 78, 148, 0.65);
+	color: #4B204B;
+}
+
+.secondary-nav > a {
+	display: inline-block;
+	font-weight: bold;
+	color: #874E94;
 	padding: 15px;
+	font-size: 14pt;
+}
+
+.secondary-nav > a:hover {
+	text-decoration: line-through;
+	text-transform: uppercase;
+	color: rgba(135, 78, 148, 0.65);
 }
 
 /**
 * Primary Content
 ***/
 
-.panel.primary-content > div:nth-child(2) {
-	/*background-color: #FFF;*/
-}
-
 .panel.primary-content {
 	/*background-color: #D7E1E7;*/
 	background-color: rgba(241, 241, 241, 1);
-	min-height: 875px;
+	min-height: 600px;
 }
 
 /****************************************
@@ -128,26 +149,95 @@ header {
 .container {
 	background-color: rgba(241, 241, 241, 1);
 	min-height: 140px;
-	width: 500px;
-	padding: 10px;
+	width: 890px;
+	margin: 10px;
+	display: inline-block;
 }
 
 .mediaImg {
 	float: left;
-	background-color: #FFF;
 }
 
 .mediaImg > img {
 	width: 150px;
-	height: 165px;
 	display: block;
 }
 
 .mediaContent {
-	padding: 5px;
-	height: 165px;
-	background-color: #FFF;
+	padding: 10px;
 	border-top-right-radius: 5px;
 	border-bottom-right-radius: 5px;
 	overflow: hidden;
+}
+
+.mediaContent a {
+	font-weight: bold;
+	color: #874E94;
+}
+
+.mediaContent a:hover {
+	text-decoration: overline;
+	text-transform: lowercase;
+	color: rgba(135, 78, 148, 0.65);
+}
+
+.mediaImg > img, .mediaContent {
+	height: 165px;
+}
+
+.mediaImg, .mediaContent {
+	background-color: #FFF;
+}
+
+.product {
+	margin: 10px;
+}
+
+.product option {
+	background-color: rgba(135, 78, 148, 0.65);
+	font-size: 14pt;
+}
+
+.product select {
+  background-color: #874E94;
+  color: #FFF;
+  font-weight: bold;
+}
+
+.product button {
+	background-color: #fff;
+	color: #874E94;
+	border-radius: 5px;
+	font-weight: bold;
+	border: 2px solid #874E94;
+}
+
+.user > div, button {
+	margin: 10px;
+}
+
+/*.user > div:nth-child(1) input {
+
+  padding: 5px;
+  border: none;
+  border-top: 2px solid #874E94;
+  border-bottom: 2px solid #874E94;
+  transition: border 0.3s;
+}*/
+
+.user > div input {
+
+  padding: 5px;
+  border: 2px solid #874E94;
+  transition: border 0.3s;
+  color: #874E94;
+  font-weight: bold;
+}
+
+.user button {
+	background-color: #874E94;
+	color: #FFF;
+	border-radius: 5px;
+	font-weight: bold;
+	border: 2px solid #874E94;
 }
