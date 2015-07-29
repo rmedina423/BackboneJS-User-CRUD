@@ -85,7 +85,7 @@ var ProductFormView = Backbone.View.extend({
 
 			App.Collections.shoe.create(formData, {
 				success: function (shoe) {
-					App.router.navigate('/', { trigger: true });
+					App.router.navigate('/shoes', { trigger: true });
 				}
 			});
 
@@ -93,7 +93,7 @@ var ProductFormView = Backbone.View.extend({
 		} else {
 			this.product.set(formData);
 			this.product.save().done(function () {
-				App.router.navigate('/', { trigger: true});
+				App.router.navigate('/shoes', { trigger: true});
 			});
 		}
 	}
