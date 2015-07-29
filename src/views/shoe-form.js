@@ -1,7 +1,13 @@
 var $ = require('jquery');
 var Backbone = require('backbone');
 var formTemplate = require('../templates/product-form.hbs');
+var shoeSizeTemplate = require('../templates/shoe-size.hbs');
+var shoeColorTemplate = require('../templates/shoe-color.hbs');
 
+var shoeDescription = {
+	size: shoeSizeTemplate,
+	color: shoeColorTemplate
+}
 
 /****************************************
   App
@@ -24,16 +30,19 @@ var ProductFormView = Backbone.View.extend({
 
 		// Display form in Create Mode
 		if (!this.editMode) {
-			var output = formTemplate();
-			this.$el.html(output)
 
+			var output = formTemplate(shoeDescription)
+
+			this.$el.html(output)
 
 		// Display form in Update Mode
 		} else {
 			var product = this.product = new Product({id: ShoeId});
 
 			product.fetch().done(function (shoe) {
-				var output = formTemplate(product.toJSON());
+
+				var output = formTemplate(shoeDescription);
+
 				_this.$el.html(output);
 
 				var form = _this.$el.find($('form.product'))
