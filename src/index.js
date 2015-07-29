@@ -9,7 +9,7 @@ var shoeCollection = require('./collections/shoe');
 var UserFormView = require('./views/user-form');
 var ProductFormView = require('./views/shoe-form')
 App.Views.UserForm = new UserFormView;
-App.Views.ProductFormView = new ProductFormView
+App.Views.ProductForm = new ProductFormView
 
 // View: List Users
 var ListUsersView = require('./views/list-users');
@@ -59,7 +59,7 @@ App.Router = Backbone.Router.extend({
   },
 
   addShoe: function(id) {
-    App.Views.ProductFormView.render(id);
+    App.Views.ProductForm.render(id);
   },
 
   deleteProduct: function(id) {
