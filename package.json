@@ -12,9 +12,12 @@
     "browserify": "^10.2.6",
     "browserify-shim": "^3.8.10",
     "gulp": "^3.9.0",
+    "gulp-jshint": "^2.0.1",
     "gulp-serve": "^1.0.0",
     "gulp-util": "^3.0.6",
     "hbsfy": "^2.2.1",
+    "jshint": "^2.9.3",
+    "jshint-stylish": "^2.2.1",
     "json-server": "^0.7.23",
     "rimraf": "^2.4.2",
     "vinyl-source-stream": "^1.1.0"
@@ -61,5 +64,10 @@
   "bugs": {
     "url": "https://github.com/mtlewandowsk89/BackboneJS-User-CRUD/issues"
   },
-  "homepage": "https://github.com/mtlewandowsk89/BackboneJS-User-CRUD#readme"
+  "homepage": "https://github.com/mtlewandowsk89/BackboneJS-User-CRUD#readme",
+  "jshintConfig": {
+    "node": true,
+    "browser": true,
+    "validthis": true
+  }
 }
