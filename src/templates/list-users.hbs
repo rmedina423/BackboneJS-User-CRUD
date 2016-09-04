@@ -1,15 +1,15 @@
-
 {{#each this}}
-<div class="container">
-  <div class="mediaImg">
-    <img src="{{img}}" alt="" width=100 height=100>
+  <div class="container">
+    <div class="mediaImg">
+      <img src="{{img}}" width=100 height=100>
+    </div>
+    <div data-id="{{id}}" class="mediaContent">
+      <p>{{name}}</p>
+      <p>{{hobby}}</p>
+      <p>
+        <a href="/#/user/{{id}}/edit">Edit</a> |
+        <a href="/#/user/{{id}}/delete">Delete</a>
+      </p>
+    </div>
   </div>
-  <div data-id="{{id}}" class="mediaContent">
-    <p>{{name}}</p>
-    <p>{{hobby}}</p>
-    <p><a href="/#/user/{{id}}/edit">Edit</a> |
-      <a href="/#/user/{{id}}/delete">Delete</a>
-    </p>
-  </div>
-</div>
 {{/each}}
