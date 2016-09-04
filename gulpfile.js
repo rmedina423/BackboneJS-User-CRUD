@@ -5,6 +5,8 @@ var gutil = require('gulp-util');
 var source = require('vinyl-source-stream');
 var browserify = require('browserify');
 var rimraf = require('rimraf');
+var jshint = require('gulp-jshint');
+var jshintConfig  = require('./package').jshintConfig;
 var jsonServer = require('json-server');
 var apiServer = jsonServer.create();
 var router = jsonServer.router('db.json');
@@ -20,13 +22,19 @@ var bundler = browserify({
   debug: true
 });
 
-bundler.on('log', gutil.log); // output build logs to terminal
+bundler.on('log', gutil.log);
 
 gulp.task('clean', function (cb) {
   rimraf('build', cb);
 });
 
-gulp.task('build', ['clean'], function () {
+gulp.task('lint', function () {
+  return gulp.src(['./gulpfile.js', 'src/**/*.js'])
+    .pipe(jshint(jshintConfig))
+    .pipe(jshint.reporter('jshint-stylish'));
+});
+
+gulp.task('build', ['clean', 'lint'], function () {
   return bundler.bundle()
     .on('error', gutil.log.bind(gutil, 'Browserify Error'))
     .pipe(source('bundle.js'))
