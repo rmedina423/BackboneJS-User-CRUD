@@ -70,4 +70,4 @@ gulp.task('watch', ['build'], function () {
 })
 
 // Default
-gulp.task('default', ['serve', 'watch']);
+gulp.task('default', ['serve', 'lint', 'watch']);
