@@ -15,7 +15,7 @@ App.Models.User = Backbone.Model.extend({
   url: function() {
     var base = App.Settings.apiRoot + '/users';
     if (this.isNew()) return base;
-    return base + '/' + this.id
+    return base + '/' + this.id;
   }
 });
 

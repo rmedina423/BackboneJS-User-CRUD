@@ -7,14 +7,14 @@ var shoeColorTemplate = require('../templates/shoe-color.hbs');
 var shoeDescription = {
 	size: shoeSizeTemplate,
 	color: shoeColorTemplate
-}
+};
 
 /****************************************
   App
 *****************************************/
 
 var App = require('../app');
-var Product = require('../models/shoe.js')
+var Product = require('../models/shoe.js');
 
 /****************************************
   View: Product Form
@@ -31,9 +31,9 @@ var ProductFormView = Backbone.View.extend({
 		// Display form in Create Mode
 		if (!this.editMode) {
 
-			var output = formTemplate(shoeDescription)
+			var output = formTemplate(shoeDescription);
 
-			this.$el.html(output)
+			this.$el.html(output);
 
 		// Display form in Update Mode
 		} else {
@@ -45,13 +45,13 @@ var ProductFormView = Backbone.View.extend({
 
 				_this.$el.html(output);
 
-				var form = _this.$el.find($('form.product'))
+				var form = _this.$el.find($('form.product'));
 
-				form.find($('select[name="type"]')).val(shoe.type)
-				form.find($('select[name="size"]')).val(shoe.size)
-				form.find($('select[name="color"]')).val(shoe.color)
+				form.find($('select[name="type"]')).val(shoe.type);
+				form.find($('select[name="size"]')).val(shoe.size);
+				form.find($('select[name="color"]')).val(shoe.color);
 
-			})
+			});
 		}
 	},
 
@@ -60,7 +60,7 @@ var ProductFormView = Backbone.View.extend({
 	},
 
 	submitForm: function (event) {
-		event.preventDefault()
+		event.preventDefault();
 		// Collect Form Data
 		var formData = {
 			type: $('form.product select[name="type"]').val(),
@@ -89,7 +89,7 @@ var ProductFormView = Backbone.View.extend({
 					formData.img = '/images/Basketball-Shoes.jpg';
 					break;
 				default:
-					console.log('Sorry, we do not have that product')
+					console.log('Sorry, we do not have that product');
 			}
 
 			App.Collections.shoe.create(formData, {
@@ -106,6 +106,6 @@ var ProductFormView = Backbone.View.extend({
 			});
 		}
 	}
-})
+});
 
 module.exports = ProductFormView;

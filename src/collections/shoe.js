@@ -17,6 +17,6 @@ var ShoeCollection = Backbone.Collection.extend({
   model: Shoe
 });
 
-App.Collections.shoe = new ShoeCollection;
+App.Collections.shoe = new ShoeCollection();
 
 module.exports = App.Collections.shoe;

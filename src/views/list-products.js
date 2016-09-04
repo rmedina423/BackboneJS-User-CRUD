@@ -21,9 +21,9 @@ var ListProducts = Backbone.View.extend({
 		productCollection.fetch().done(function (products) {
 			productCollection.add(products);
 
-			_this.$el.html(listProductsTemplate(products))
-		})
+			_this.$el.html(listProductsTemplate(products));
+		});
 	}
-})
+});
 
 module.exports = ListProducts;

@@ -7,18 +7,18 @@ var shoeCollection = require('./collections/shoe');
 
 // View: Form
 var UserFormView = require('./views/user-form');
-var ProductFormView = require('./views/shoe-form')
-App.Views.UserForm = new UserFormView;
-App.Views.ProductForm = new ProductFormView
+var ProductFormView = require('./views/shoe-form');
+App.Views.UserForm = new UserFormView();
+App.Views.ProductForm = new ProductFormView();
 
 // View: List Users
 var ListUsersView = require('./views/list-users');
-App.Views.ListUsers  = new ListUsersView;
+App.Views.ListUsers  = new ListUsersView();
 
 
 // View: List Products
 var ListProductsView = require('./views/list-products');
-App.Views.ListProducts = new ListProductsView;
+App.Views.ListProducts = new ListProductsView();
 
 // App Router
 App.Router = Backbone.Router.extend({
@@ -50,12 +50,12 @@ App.Router = Backbone.Router.extend({
     var user = userCollection.get(id);
 
     user.destroy().done(function (user) {
-      App.router.navigate('/', { trigger: true })
+      App.router.navigate('/', { trigger: true });
     });
   },
 
   listProducts: function() {
-    App.Views.ListProducts.render()
+    App.Views.ListProducts.render();
   },
 
   addShoe: function(id) {
@@ -66,8 +66,8 @@ App.Router = Backbone.Router.extend({
     var product = shoeCollection.get(id);
 
     product.destroy().done(function (product) {
-      App.router.navigate('/shoes', { trigger: true })
-    })
+      App.router.navigate('/shoes', { trigger: true });
+    });
   },
 
   defaultRoute: function(actions) {
@@ -76,6 +76,6 @@ App.Router = Backbone.Router.extend({
 });
 
 // Initiate the router
-App.router = new App.Router;
+App.router = new App.Router();
 
 Backbone.history.start();

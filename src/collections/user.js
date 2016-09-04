@@ -17,6 +17,6 @@ var UserCollection = Backbone.Collection.extend({
   model: User
 });
 
-App.Collections.user = new UserCollection;
+App.Collections.user = new UserCollection();
 
 module.exports = App.Collections.user;

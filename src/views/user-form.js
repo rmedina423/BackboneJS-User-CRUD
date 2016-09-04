@@ -53,7 +53,7 @@ var UserFormView = Backbone.View.extend({
     if (!this.editMode) {
 
       // Only set the image on add mode
-      formData.img = 'http://robohash.org/'+ Date.now().toString(16) + '.png'
+      formData.img = 'http://robohash.org/'+ Date.now().toString(16) + '.png';
 
       App.Collections.user.create(formData, {
         success: function (user) {
