@@ -2,76 +2,72 @@ var $ = require('jquery');
 var Backbone = require('backbone');
 var formTemplate = require('../templates/user-form.hbs');
 
-
 /****************************************
-  App
+	App
 *****************************************/
 
 var App = require('../app');
 var User = require('../models/user');
 
 /****************************************
-  View: User Form
+	View: User Form
 *****************************************/
 
 var UserFormView = Backbone.View.extend({
-  el: $("main"),
-  editMode: false,
+	el: $('main'),
+	editMode: false,
 
-  render: function (userId) {
-    var _this = this;
-    this.editMode = !!userId;
+	render: function (userId) {
+		var _this = this;
+		this.editMode = !!userId;
 
-    // Display form in Create Mode
-    if (!this.editMode) {
-      var output = formTemplate();
-      this.$el.html(output);
+		// Display form in Create Mode
+		if (!this.editMode) {
+			this.$el.html(formTemplate());
 
-    // Display form in Update Mode
-    } else {
-      var user = this.user = new User({ id: userId });
+		// Display form in Update Mode
+		} else {
+			var user = this.user = new User({ id: userId });
 
-      user.fetch().done(function (data) {
-        var output = formTemplate(user.toJSON());
-        _this.$el.html(output);
-      });
-    }
-  },
+			user.fetch().done(function (data) {
+				_this.$el.html(formTemplate(user.toJSON()));
+			});
+		}
+	},
 
-  events: {
-    "submit form.user": "submitForm"
-  },
+	events: {
+		'submit form.user': 'submitForm'
+	},
 
-  submitForm: function () {
-    // Collect Form Data
-    var formData = {
-      name: $('form.user input[name="name"]').val(),
-      hobby: $('form.user input[name="hobby"]').val()
-    };
+	submitForm: function (event) {
+		event.preventDefault();
 
-    // Add Mode (Create User)
-    if (!this.editMode) {
+		// Collect Form Data
+		var formData = {
+			name: $('form.user input[name="name"]').val(),
+			hobby: $('form.user input[name="hobby"]').val()
+		};
 
-      // Only set the image on add mode
-      formData.img = 'http://robohash.org/'+ Date.now().toString(16) + '.png';
+		// Add Mode (Create User)
+		if (!this.editMode) {
 
-      App.Collections.user.create(formData, {
-        success: function (user) {
-          App.router.navigate('/', { trigger: true });
-        }
-      });
+			// Only set the image on add mode
+			formData.img = 'http://robohash.org/'+ Date.now().toString(16) + '.png';
 
-    // Edit Mode (Update User)
-    } else {
-      this.user.set(formData);
-      this.user.save().done(function () {
-        App.router.navigate('/', { trigger: true });
-      });
-    }
+			App.Collections.user.create(formData, {
+				success: function (user) {
+					App.router.navigate('/', { trigger: true });
+				}
+			});
 
-    // Prevent Default
-    return false;
-  }
+		// Edit Mode (Update User)
+		} else {
+			this.user.set(formData);
+			this.user.save().done(function () {
+				App.router.navigate('/', { trigger: true });
+			});
+		}
+	}
 });
 
 module.exports = UserFormView;

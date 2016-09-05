@@ -3,14 +3,11 @@ var Backbone = require('backbone');
 var listProductsTemplate = require('../templates/list-products.hbs');
 
 // App
-
 var App = require('../app');
 
 // View: List Products
-
 var ListProducts = Backbone.View.extend({
 	el: $('main'),
-
 	collection: App.Collections.shoe,
 
 	render: function () {

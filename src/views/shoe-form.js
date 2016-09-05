@@ -30,27 +30,21 @@ var ProductFormView = Backbone.View.extend({
 
 		// Display form in Create Mode
 		if (!this.editMode) {
-
-			var output = formTemplate(shoeDescription);
-
-			this.$el.html(output);
+			this.$el.html(formTemplate(shoeDescription));
 
 		// Display form in Update Mode
 		} else {
 			var product = this.product = new Product({id: ShoeId});
 
 			product.fetch().done(function (shoe) {
-
 				var output = formTemplate(shoeDescription);
+				var form = _this.$el.find($('form.product'));
 
 				_this.$el.html(output);
-
-				var form = _this.$el.find($('form.product'));
 
 				form.find($('select[name="type"]')).val(shoe.type);
 				form.find($('select[name="size"]')).val(shoe.size);
 				form.find($('select[name="color"]')).val(shoe.color);
-
 			});
 		}
 	},
@@ -61,6 +55,7 @@ var ProductFormView = Backbone.View.extend({
 
 	submitForm: function (event) {
 		event.preventDefault();
+		
 		// Collect Form Data
 		var formData = {
 			type: $('form.product select[name="type"]').val(),
